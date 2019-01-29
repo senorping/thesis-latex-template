@@ -1,6 +1,0 @@
-(indexentry :tkey (("loesung" "\\glossentry{ind:lm}") ) :locref "{}{IV}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("fluid" "\\glossentry{ind:fl}") ) :locref "{}{IV}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("anion" "\\glossentry{ind:anion}") ) :locref "{}{IV}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("cation" "\\glossentry{ind:cation}") ) :locref "{}{IV}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("cationanion" "\\glossentry{ind:anicati}") ) :locref "{}{IV}" :attr "pageglsnumberformat" ) 
-(indexentry :tkey (("zzzzpm" "\\glossentry{ind:debhueckactcoeff}") ) :locref "{}{IV}" :attr "pageglsnumberformat" ) 
