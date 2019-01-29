@@ -1,0 +1,32 @@
+;; This logfile was generated automatically by `xindy'
+;; at 29.01.2019  15:47:51
+;; Indexstyle: "E:\\GitHub\\thesis-latex-template\\jXtLCE530n", Rawindex: "E:\\GitHub\\thesis-latex-template\\odSsqLT0Zw", Output: "main.idi"
+
+
+Building indexentry-tree:
+Hierdepth of index is :TREE
+
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+
+Forming letter-groups:
+Letter-group: "´Ã—Ðà¼" -> "L"
+Letter-group: "œ´à¨" -> "F"
+Letter-group: "€¼¨Ã¼" -> "A"
+Letter-group: "†€Ú¨Ã¼" -> "C"
+Letter-group: "†€Ú¨Ã¼€¼¨Ã¼" -> "C"
+Letter-group: "ððððÈ»" -> "Z"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "€¼¨Ã¼" -> "A"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "†€Ú¨Ã¼" -> "C"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "œ´à¨" -> "F"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "´Ã—Ðà¼" -> "L"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "ððððÈ»" -> "Z"

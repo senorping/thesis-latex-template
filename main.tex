@@ -1,0 +1,478 @@
+
+%% Masterthesis
+%% 2018
+%%%%%%%====================== Preamble
+
+%%%======================== Main.tex
+
+%% Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[11pt, oneside, openright, a4paper, headings=normal,
+abstracton, bibliography=totoc, listof=totoc]{scrreprt}
+% Schriftgroesse: 11pt
+% Layout: Einseitig
+% twoside Doppelseitig
+% Papierformat: Din A4
+
+%% Neue deutsche Rechtschreibung
+\usepackage[ngerman]{babel}
+
+%% Dokumentencodierung - wichtig um Sonderzeichen direkt im Dokument zu nutzen
+\usepackage[latin1]{inputenc}
+% Mac - applemac
+% Linux - utf8
+% Windows - latin1
+
+%% Verwendung von Schrifen, die Umlaute enthalten
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+%% Literaturverzeichnis
+\usepackage[square,sort,comma,numbers]{natbib}
+%	\setcitestyle{square}
+	%, comma, numbers,sort&compress, super}
+% Literaturverzeichnis nach Deutscher DIN Norm
+
+
+%% Name des Literaturverzeichnisses anpassen
+\renewcommand{\refname}{Literaturverzeichnis}
+
+
+%% Definieren von "Abkürzungen"
+\newcommand{\Autor}{Senorping}
+\newcommand{\Adresse}{743 Evergreenterace}
+\newcommand{\Mail}{alias@domain.com}
+\newcommand{\Arbeit}{Master-Thesis}
+\newcommand{\ArbeitThema}{Enchantin muggel technology} %Titel
+\newcommand{\Prof}{Prof. Dr.-Ing. Sirius Snape}
+
+
+
+% für halbes Leerzeichen bei diesen Abkürzungen und bei Einheiten
+\newcommand{\zB}{\mbox{z.\,B. }} %z.B. zum Beispiel
+\newcommand{\uA}{\mbox{u.\,A. }} %u.A. unter Anderem
+
+%% SI EInheiten verwenden
+\usepackage{siunitx}
+
+%% Einstellungen der Seitenraender
+%\usepackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+%% Fuer Rotationen
+\usepackage{rotating}
+
+%% eigene Kopf- und Fußzeilen
+%\usepackage{fancyhdr}
+%\lhead[\fancyplain{}{\bfseries \small{\rightmark}}]%
+%      {\fancyplain{}{\bfseries \small{}}}
+%\rhead[\fancyplain{}{\bfseries \small{}}]%
+%      {\fancyplain{}{\bfseries \small{\rightmark}}}
+%\lfoot[\fancyplain{}{\bfseries \small{\thepage}}]%
+%      {\fancyplain{}{\bfseries \small{\leftmark}}}
+%\rfoot[\fancyplain{}{\bfseries \small{\leftmark}}]%
+%      {\fancyplain{}{\bfseries \small{\thepage}}}
+%\cfoot{}
+
+%% Inhaltsverzeichnis - enthaelt auch bei Kapiteln Punkte zur Seite
+\usepackage{tocloft}
+%\addtocontents{toc}
+%{\protect\renewcommand{\protect\cftsecleader}
+%{\protect\cftdotfill{\protect\cftsubsecdotsep}}{}}
+%\setcounter{tocdepth}{4}
+%\setcounter{secnumdepth}{4}
+
+%% Zeilenabstand
+\usepackage{setspace}
+\onehalfspacing
+% 1.5 facher Zeilenabstand
+
+
+%% Mathematische Pakete
+\usepackage{amsmath}        %Gleichungsumgebungen
+\usepackage{arrayjobx}		%Umgeht Fehler by \matr Befehl!
+\usepackage{amssymb}        %erweiterter Symbolsatz
+\usepackage{latexsym}       %zusaetzliche Symbole
+\usepackage{exscale}        %passt sonderzeichen wie Integrale der Schriftgroesse an
+\usepackage{physics}
+
+%% Zusammenfassung
+\usepackage{abstract}
+
+%% Um Bilder einzubinden
+
+\usepackage{graphicx}
+%\DeclareGraphicsExtensions{.pdf} % Dateiendung für PDF-Bilder
+\usepackage{float} %um Bilder mit H besser zu positionieren
+
+%% Farbenunterstuetzung im Dokument
+\usepackage{color}
+
+%% kleinere Bildunterschrift
+%\usepackage[hang,footnotesize,bf]{caption}
+\usepackage[font=small,format=plain,labelfont=bf,up]{caption}
+%,textfont=it,up
+
+%% Sonderzeichen
+\usepackage{textcomp}
+
+%% Um Quellcode einzubetten
+\usepackage{listings}
+\lstset{
+	numbers=left, 
+	numberstyle=\tiny, 
+	numbersep=5pt,
+	commentstyle=\color[rgb]{0.0,0.4,0.0},
+	keywordstyle=\color{black}\bfseries,
+	extendedchars=true,
+	basicstyle=\scriptsize\ttfamily,
+	basicstyle=\footnotesize\ttfamily,
+	tabsize=4,
+	breakautoindent=true,
+	breakindent=2em,
+	breaklines=true,
+	%caption={Codebeispiel},
+	captionpos=b,
+	%frame=tlrb,
+	%backgroundcolor=\color[rgb]{0.0,0.0,1.0},
+	%prebreak=\mbox{$\hookleftarrow$},
+	language=octave
+}
+
+%% Internes Paket um zu ueberpruefen ob PDFLaTeX verwendet wird
+\usepackage{ifpdf}
+
+
+%% Wenn es eine PDFLaTeX ist wird automatisch die Dateiendung der Dateien gesetzet
+\ifpdf
+  \DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+\else
+  \DeclareGraphicsExtensions{.eps, .jpg}
+\fi
+
+%% Kapitel auf neuer Seite Anfangen
+%\newcommand{\origsection}{} 
+%\let\origsection\section 
+%\renewcommand*{\section}{% 
+% \clearpage 
+%  \origsection 
+%} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Verzeichnisse %%%%%%%%%%%%%% Abkürzung, Symbol, Indices   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Glossaries package einbinden %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+nonumberlist, 		%keine Seitenzahlen anzeigen
+acronym,      		%ein Abkürzungsverzeichnis erstellen
+toc,          		%Einträge im Inhaltsverzeichnis
+section=chapter,	%im Inhaltsverzeichnis auf chapter-Ebene erscheinen
+xindy
+]{glossaries} 
+
+%% Den Punkt am Ende jeder Beschreibung deaktivieren, da kein Satz
+\renewcommand*{\glspostdescription}{}
+
+%% Tabellenbreite & Länge \hline in Verzeichnissen
+\setlength{\glsdescwidth}{16cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Zusätzliche Verzeichnisse anlegen %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Symbolverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Symbolverzeichnis erstellen == Griechisch & Römisch =======================
+
+\newglossary[slg]{romsymbols}{syi}{syg}{Römische Buchstaben} %% Römische Symbole
+\newglossary[slg]{grksymbols}{sgi}{sgg}{Griechische Buchstaben} %% Griechische Symbole
+% Symbolverzeichnis um SI-Einheiten erweitern
+\glsaddkey{unit}{\glsentrytext{\glslabel}}{\glsentryunit}{\GLsentryunit}{\glsunit}{\Glsunit}{\GLSunit}
+
+\glsnoexpandfields
+
+%% Ausgabe des Symbolverzeichnis formatieren, neuen Style definieren der Einheit ausgibt
+\newglossarystyle{symbunitlong}{%
+	\setglossarystyle{long3col}% base this style on the list style
+	\renewenvironment{theglossary}{% Change the table type --> 3 columns
+		\begin{longtable}{cp{0.6\glsdescwidth}>{\centering\arraybackslash}p{3cm}}}%
+		{\end{longtable}}%
+	%
+	\renewcommand*{\glossaryheader}{%  Change the table header
+		\bfseries  & \bfseries Definition & \bfseries Einheit \\
+		\hline
+		\endhead}
+	\renewcommand*{\glossentry}[2]{%  Change the displayed items
+		%\begin{center}
+		\glstarget{##1}{\glossentryname{##1}} %
+		%\end{center}
+		& \glossentrydesc{##1}% Description
+		& \glsunit{##1}  \tabularnewline
+	}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Indices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Verzeichnis für Indices anlegen =============================================
+\newglossary[ilg]{indiceslist}{idi}{idg}{Indizes}
+
+%% Ausgabe des Indexverzeichnis & Abkürzungsverzeichnis formatieren --> neuen Style definieren
+\newglossarystyle{indiclong}{%
+	\setglossarystyle{long3col}% base this style on the list style
+	\renewenvironment{theglossary}{% Change the table type --> 3 columns
+		\begin{longtable}{cp{0.6\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
+		{\end{longtable}}%
+	%
+	\renewcommand*{\glossaryheader}{%  Change the table header
+		\bfseries  & \bfseries Definiton\\
+		\hline
+		\endhead}
+	\renewcommand*{\glossentry}[2]{%  Change the displayed items
+		%\begin{center}
+		\glstarget{##1}{\glossentryname{##1}} %
+		%\end{center}
+		& \glossentrydesc{##1}% Description
+		\tabularnewline
+	}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% In TeX-Dateien ausgelagerte  Glossaries Inhalte einbinden %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{abkuerzungen}
+\include{romans}
+\include{greeks}
+\include{glossar}
+\include{indices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Glossar-Befehle anschalten %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeglossaries
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PDF Navigation im Dokument %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[pdfview=FitH,     	
+            pdfstartview=FitH,
+            pageanchor=true,
+            colorlinks=true,
+            linkcolor=black,
+            citecolor=black,
+            menucolor=black,
+            urlcolor=black,
+            breaklinks=true,
+            plainpages=false
+           ]{hyperref}
+%% Silbentrennung unterbinden
+% Befehl: \nohyphens{ZUSAMMENGESCHRIEBENESwort}
+\usepackage{hyphenat}
+
+% Farbe
+\usepackage{color}
+
+% Mehrere Zeilen in einer Tabelle
+\usepackage{multirow}
+
+% Define user colors using the RGB model
+\definecolor{hellrot}{rgb}  {0.95,0.50,0.50}
+\definecolor{hellgruen}{rgb}{0.50,0.95,0.50}
+\definecolor{hellgelb}{rgb} {0.95,0.95,0.50}
+
+% Farbe in Tabellen
+\usepackage{colortbl}
+
+%% Neue Befehle
+%\newcommand{\dd}{\mathrm{d}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Document Anfang %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+% Roemische Seitenzahlen
+\pagenumbering{Roman}
+
+\lstset{
+	numbers=left, 
+	numberstyle=\tiny, 
+	numbersep=5pt,
+	%commentstyle=\color[rgb]{0.0,0.4,0.0},
+	keywordstyle=\color{black}\bfseries,
+	extendedchars=true,
+	basicstyle=\scriptsize\ttfamily,
+	basicstyle=\footnotesize\ttfamily,
+	tabsize=4,
+	breakautoindent=true,
+	breakindent=2em,
+	breaklines=true,
+	%caption={Codebeispiel},
+	captionpos=b,
+	%frame=tlrb,
+	%backgroundcolor=\color[rgb]{0.0,0.0,1.0},
+	%prebreak=\mbox{$\hookleftarrow$},
+	language=octave
+}
+
+%%%
+%%%================================================================== Title
+\include{00_title}
+
+%%%
+%%%================================================================== Abstract
+
+% Neue leere Seite
+\mbox{}\thispagestyle{empty}
+%\clearpage
+
+% Ueberschrift soll im Inhaltsverzeichnis erscheinen
+%\addcontentsline{toc}{section}{Zusammenfassung}
+
+%\include{00b_abstract}
+
+%%%
+%%%================================================================== Statement
+
+% Neue Seite
+\clearpage
+
+% Ueberschrift soll im Inhaltsverzeichnis erscheinen
+%\addcontentsline{toc}{section}{Erklärung}
+
+\begin{center}\textbf{\large{Erkl\"arung}}\end{center}
+
+\noindent
+Ich versichere an Eides statt, die von mir vorgelegte Arbeit selbstständig verfasst zu haben. Alle Stellen, die wörtlich oder sinngemäß aus veröffentlichten oder nicht veröffentlichten Arbeiten anderer entnommen sind, habe ich als entnommen kenntlich gemacht. Sämtliche Quellen und Hilfsmittel, die ich für die Arbeit benutzt habe, sind angegeben. Die Arbeit hat mit gleichem Inhalt bzw. in wesentlichen Teilen noch keiner anderen Prüfungsbehörde vorgelegen.
+ Die aus fremden Quellen direkt oder indirekt übernommenen Gedanken sind als solche kenntlich gemacht. Die Arbeit wurde bisher in gleicher oder ähnlicher Form noch keiner anderen Prüfungsbehörde vorgelegt bzw. nicht veröffentlicht.
+ 
+\vspace{4\baselineskip}
+
+\begin{tabular}{cp{10cm}}
+ \rule[-0.2cm]{7.5cm}{0.5pt} \\
+ \textsc{\Autor} \\
+ \begin{scriptsize}\Adresse\end{scriptsize}
+\end{tabular}
+
+%%%
+
+
+%%%================================================================== TOC
+
+\clearpage
+\tableofcontents
+
+
+%%%================================================================== Dummy Inhalte Glossaries
+\glsaddall % Füge alle Einträge, egal ob genutzt ein!
+
+
+%%%================================================================== Abkuerzungsverzeichnis
+\clearpage
+%Abkürzungen ausgeben
+%\deftranslation[to=German]{Acronyms}
+\printglossary[type=\acronymtype,style=indiclong, title={Abkürzungsverzeichnis}]
+
+
+%%%================================================================== Symbolverzeichnis
+\clearpage
+%Symbole ausgeben
+\printglossary[type=romsymbols,style=symbunitlong]
+\printglossary[type=grksymbols,style=symbunitlong]
+
+
+%%%================================================================== Indices
+\clearpage
+%Symbole ausgeben
+\printglossary[type=indiceslist,style=indiclong]
+
+
+%%%
+%%%================================================================== Content
+
+% Neue Seite
+\clearpage
+
+% Arabische Seitenzahlen
+\pagenumbering{arabic}
+
+%% Kapitel der Arbeit
+%\pagestyle{fancy}
+
+\include{01_einleitung}
+
+\include{02_fundamentals}
+
+\include{03_concept}
+
+\include{04_implementation}
+
+\include{05_evaluation}
+
+\include{06_conclusion}
+
+
+\thispagestyle{plain}
+%%%
+%%%================================================================== Glossar
+
+\begin{appendix}
+
+\glstoctrue % Glossar im Inhaltsverzeichnis
+%\printglossaries
+%[style=altlist,title=Glossar]
+
+%%%
+%%%================================================================== ListOf
+
+\clearpage
+\listoffigures
+
+\clearpage
+\listoftables
+
+\clearpage
+\renewcommand{\lstlistlistingname}{Listingverzeichnis}
+\lstlistoflistings
+
+%%%
+%%%================================================================== Bibliography
+
+% Neue Seite
+\clearpage
+
+% Ueberschrift soll im Inhaltsverzeichnis erscheinen
+%\addcontentsline{toc}{section}{Literatur}
+
+\bibliographystyle{unsrt}
+% Alternative: abbrv, alpha, plain,...
+
+% Verwendet die Textdatenbank literature.bib
+% Alter Befehl \biobliography{literature}
+\bibliography{literature.bib}
+
+%%%
+%%%================================================================== Dokument Ende
+
+\end{appendix}
+
+\end{document}
+
+%%% EOF

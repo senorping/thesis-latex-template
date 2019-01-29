@@ -1,0 +1,16 @@
+;; This logfile was generated automatically by `xindy'
+;; at 29.01.2019  15:47:53
+;; Indexstyle: "E:\\GitHub\\thesis-latex-template\\KI9biWBW2j", Rawindex: "E:\\GitHub\\thesis-latex-template\\qabviv5RDv", Output: "main.gls"
+
+
+Building indexentry-tree:
+Hierdepth of index is :TREE
+
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+
+Forming letter-groups:
+Letter-group: "€†Ú¨å— ¨Ë—†ÚÃËí" -> "A"
+Letter-group: "€¼ÚæÃËÚ€Ú—¨" -> "A"
+sort-indexentries: (FORWARD BACKWARD FORWARD FORWARD)
+Letter-group: "€†Ú¨å— ¨Ë—†ÚÃËí" -> "A"
